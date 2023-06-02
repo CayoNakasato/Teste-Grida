@@ -93,7 +93,6 @@ const HoldingGlassPng = styled.img`
 
 const ContainerImage = styled.div`
   display: flex;
-  background-color: blue;
   margin-top: 13rem;
   margin-left: 35%;
 `
@@ -173,26 +172,15 @@ const SearchEllipse2 = styled.div`
 
 const SimpleEasyHealthy = styled.div`
   color: black;
+  position: absolute;
   text-overflow: ellipsis;
   font-size: 64px;
   font-family: Inter, sans-serif;
   font-weight: initial;
   text-align: right;
-  background-color: red;
+  bottom: 490px;
+  left: 1130px;
 `;
-
-// const SimpleEasyHealthy = styled.div`
-//   color: black;
-//   position: absolute;
-//   text-overflow: ellipsis;
-//   font-size: 64px;
-//   font-family: Inter, sans-serif;
-//   font-weight: initial;
-//   text-align: right;
-//   bottom: 490px;
-//   left: 1130px;
-//   background-color: red;
-// `;
 
 const ContainerRectangles = styled.div`
   position:absolute
