@@ -1,4 +1,5 @@
 import { MakeConvertCode } from "@/use-cases/factories/make-convert-code";
+import { removeSchemaFromLiquid } from "@/utils/removeSchemaFromLiquid";
 import { Request, Response } from "express";
 import { z } from "zod";
 
@@ -30,9 +31,15 @@ export async function coverter(req: Request, res: Response) {
     
     const codeConvertedImages = codeConvertedString.replace(regex, '<img src="" alt="Descrição da Imagem">')
 
-    const codeConvertedJSON = JSON.stringify({ codeConvertedImages })
+    const codeConvertedJSON = JSON.stringify({ codeConvertedImages });
+    const liquidCodeFormatted = removeSchemaFromLiquid(codeConvertedJSON);
 
-    return res.status(200).json(codeConvertedJSON);
+    console.log(liquidCodeFormatted)
+    
+
+    return res.status(200).json({
+      liquidCode: liquidCodeFormatted,
+    });
 
   } catch (error) {
     throw error;
